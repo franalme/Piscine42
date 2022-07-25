@@ -13,26 +13,27 @@
 #include <stdio.h>
 #include <string.h>
 
-int ft_str_is_uppercase(char *str)
+int	ft_str_is_uppercase(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i] != '\0')
-    {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-        {
-            i++;
-        }
-        else return (0);
-    }
-    return (1);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+		{
+			i++;
+		}
+		else
+			return (0);
+	}
+	return (1);
 }
 
-int main(void)
+/*int main(void)
 {
 	char *font;
 
 	font = "D";
-    printf("return is %d\n", ft_str_is_uppercase(font));
-}
+	printf("return is %d\n", ft_str_is_uppercase(font));
+}*/

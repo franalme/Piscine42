@@ -13,40 +13,36 @@
 #include <stdio.h>
 #include <string.h>
 
-
-
-char *ft_strcapitalize(char *str)
+char	*ft_strcapitalize(char *str)
 {
-    int i;
+	int		i;
+	int		j;
+	char	c;
 
-    i = 0;
-    while (str[i] != '\0')
-    {
-        if (str[i] > 'A' && str[i] > 'Z' || str[i] < 'a' && str[i] > 'z')
-        {
-            i++;
-            if (str[i] >= 'a' && str[i] <= 'z')
-            {
-                str[i] -= 32;
-            }
-        }
-        else if (str[i] >= 'A' && str[i] <= 'Z' || str[i] >= '0' && str[i] <= '9')
-        {
-            i++;
-            if (str[i] >= 'A' && str[i] <= 'Z')
-            {
-                str[i] += 32;
-            }
-        }
-    }
-    return (str);
+	i = 0;
+	j = 1;
+	while (*(str + i) != '\0')
+	{
+		c = *(str + i);
+		if (j == 1 && c >= 'a' && c <= 'z')
+			str[i] -= 32;
+		else if (j == 0 && c >= 'A' && c <= 'Z')
+			str[i] += 32;
+		if (c < '0' || (c > '9' && c < 'A') || (c > 'Z' && c < 'a') || c > 122)
+			j = 1;
+		else
+			j = 0;
+		i++;
+	}
+	return (str);
 }
 
-int main(void)
+/*int main(void)
 {
-	char font[] = "DdfsfgRRYYbsdg wete432 sfdgDTJeRGe 56467gFgFg";
+	char font[] = "Salut, comMment tu vas ? 42mots quarante-deux; cinquante+et+un";
+	char *str;
 
-    ft_strcapitalize(font);
-    printf("return is %s\n", font);
-}
-
+	printf("input is %s\n", font);
+	str = ft_strcapitalize(font);
+	printf("return is %s\n", str);
+}*/

@@ -13,28 +13,26 @@
 #include <stdio.h>
 #include <string.h>
 
-char *ft_strlowcase(char *str)
+char	*ft_strlowcase(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i] != '\0')
-    {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-        {
-            str[i] += 32;
-        }
-        i++;
-    }
-    return (str);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+		{
+			str[i] += 32;
+		}
+		i++;
+	}
+	return (str);
 }
 
-int main(void)
+/*int main(void)
 {
 	char font[] = "DdfsfgRRYYbsdg wete432 sfdgDTJeRGe 56467gFgFg";
 
-    ft_strlowcase(font);
-    printf("return is %s\n", font);
-}
-
-
+	ft_strlowcase(font);
+	printf("return is %s\n", font);
+}*/

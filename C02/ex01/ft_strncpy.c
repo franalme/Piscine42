@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
+/*   strncpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: franalme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/24 16:21:25 by franalme          #+#    #+#             */
-/*   Updated: 2022/07/24 16:21:25 by franalme         ###   ########.fr       */
+/*   Created: 2022/07/24 15:25:55 by franalme          #+#    #+#             */
+/*   Updated: 2022/07/24 15:25:56 by franalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-int ft_strlen(char *str)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	len;
+	unsigned int	i;
 
-	len = 0;
-	while (str[len] != '\0')
+	i = 0;
+	while (src[i] != '\0' && i < n)
 	{
-		len++;
+		dest[i] = src[i];
+		i++;
 	}
-	return (len);
-
-void ft_putstr_non_printable(char *str)
-{
-
-int len;
-char hex1;
-char hex2;
-
-len = ft_strlen(str)
-
-while (i <= len)
-{
-	if (str [i] < 33 && str[i] > 126)
-}	{
-		hex1 = (str[i] / 16);
-		hex2 = (str[i] mod 16);
+	dest[i] = '\0';
+	return (dest);
 }
-}
+
+/*int main(void)
+{
+	char *font;
+	char dest[8];
+
+	font = "Maracuja";
+	ft_strncpy(dest, font, 5);
+	printf("fonte	: %s\n", font);
+	printf("destino	: %s\n", dest);
+}*/
